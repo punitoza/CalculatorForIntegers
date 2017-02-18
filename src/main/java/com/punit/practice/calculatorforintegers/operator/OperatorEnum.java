@@ -10,11 +10,11 @@ package com.punit.practice.calculatorforintegers.operator;
  * @author poza
  */
 public enum OperatorEnum {
-    add("org.practice.punit.calculatorforintegers.operator.Addition"), 
-    sub("org.practice.punit.calculatorforintegers.operator.Substraction"), 
-    mult("org.practice.punit.calculatorforintegers.operator.Multiplication"), 
-    div("org.practice.punit.calculatorforintegers.operator.Division"), 
-    let("org.practice.punit.calculatorforintegers.operator.Assignment");
+    add("com.punit.practice.calculatorforintegers.operator.Addition"), 
+    sub("com.punit.practice.calculatorforintegers.operator.Substraction"), 
+    mult("com.punit.practice.calculatorforintegers.operator.Multiplication"), 
+    div("com.punit.practice.calculatorforintegers.operator.Division"), 
+    let("com.punit.practice.calculatorforintegers.operator.Assignment");
     private final String className;
     OperatorEnum(String className) {
         this.className = className;
