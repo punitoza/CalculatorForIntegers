@@ -25,7 +25,4 @@ public class Addition extends BaseOperator{
         int operands[] = this.parseArguments();
         return operands[0] + operands[1];
     }
-    protected int[] parseArguments() throws CalculatorException {
-        return null;
-    }
 }

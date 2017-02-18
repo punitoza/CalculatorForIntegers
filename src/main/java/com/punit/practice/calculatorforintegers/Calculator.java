@@ -7,6 +7,7 @@
 package com.punit.practice.calculatorforintegers;
 
 import com.punit.practice.calculatorforintegers.exception.CalculatorException;
+import com.punit.practice.calculatorforintegers.operator.BaseOperator;
 
 /**
  *
@@ -14,7 +15,10 @@ import com.punit.practice.calculatorforintegers.exception.CalculatorException;
  */
 public class Calculator {
     public static int compute(String expr) throws CalculatorException {
-        return 0;
+        expr = expr.trim();
+        String operatorStr = expr.substring(0, expr.indexOf('('));
+        String operatorArgs = expr.substring(expr.indexOf('(') + 1, expr.lastIndexOf(')'));
+        return BaseOperator.createOperator(operatorStr, operatorArgs).calculate();
     }
     public static void main(String args[]) {
         try {
