@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.punit.practice.calculatorforintegers.exception;
 
 /**
- *
+ * This class is the main Exception class for Calculator Program.
+ * It is a wrapper for all exceptions occurred during this program.
  * @author punit
  */
 public class CalculatorException extends Exception {
