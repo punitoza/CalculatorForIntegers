@@ -4,5 +4,5 @@ before_deploy:
 deploy:
   provider: releases
   api_key: ${api_key}
-  file: ${jar_path}
+  file: "${jar_path}"
   skip_cleanup: true
