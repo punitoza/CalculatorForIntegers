@@ -56,6 +56,8 @@ public class Calculator {
                     Calculator.LOGGER.setLevel(Level.SEVERE);
                 } else if(level.equalsIgnoreCase("off")) {
                     Calculator.LOGGER.setLevel(Level.OFF);
+                } else {
+                    Calculator.LOGGER.setLevel(Level.INFO);
                 }
             }
             //Compute the result of the expression.
@@ -79,5 +81,9 @@ public class Calculator {
      */
     public static void log(Level level, String message) {
         LOGGER.log(level, message);
+    }
+    
+    public static Level getLogLevel() {
+        return LOGGER.getLevel();
     }
 }

@@ -6,33 +6,37 @@
 
 package com.punit.practice.calculatorforintegers.test;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.punit.practice.calculatorforintegers.CalculatorTest;
+import com.punit.practice.calculatorforintegers.operator.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 /**
  *
  * @author punit
  */
-public class CalculatorTestSuite extends TestCase {
-    
-    public CalculatorTestSuite(String testName) {
-        super(testName);
+@RunWith(Suite.class)
+@Suite.SuiteClasses({CalculatorTest.class, AdditionTest.class, AssignmentTest.class, BaseOperatorTest.class, DivisionTest.class, MultiplicationTest.class, SubstractionTest.class})
+public class CalculatorTestSuite {
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
     }
-    
-    public static Test suite() {
-        TestSuite suite = new TestSuite("CalculatorTestSuite");
-        return suite;
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
     }
-    
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+
+    @Before
+    public void setUp() throws Exception {
     }
-    
-    @Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
+
+    @After
+    public void tearDown() throws Exception {
     }
     
 }

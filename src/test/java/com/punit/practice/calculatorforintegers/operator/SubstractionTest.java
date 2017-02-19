@@ -27,24 +27,35 @@ public class SubstractionTest extends TestCase {
      * Test of calculate method, of class Addition.
      */
     @Test
-    public void testCalculate() throws Exception {
-        System.out.println("calculate");
+    public void testCalculate1() throws Exception {
+        System.out.println("calculate1");
         Substraction instance = new Substraction("2, 3");
         int expResult = -1;
         int result = instance.calculate();
         assertEquals(expResult, result);
-        
-        System.out.println("calculate");
-        instance = new Substraction("-2, 0");
-        expResult = -2;
-        result = instance.calculate();
-        assertEquals(expResult, result);
-        
-        System.out.println("calculate");
-        instance = new Substraction("-2, -3");
-        expResult = 1;
-        result = instance.calculate();
+    }
+    
+    /**
+     * Test of calculate method, of class Addition.
+     */
+    @Test
+    public void testCalculate2() throws Exception {
+        System.out.println("calculate2");
+        Substraction instance = new Substraction("-2, 0");
+        int expResult = -2;
+        int result = instance.calculate();
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of calculate method, of class Addition.
+     */
+    @Test
+    public void testCalculate3() throws Exception {
+        System.out.println("calculate3");
+        Substraction instance = new Substraction("-2, -3");
+        int expResult = 1;
+        int result = instance.calculate();
+        assertEquals(expResult, result);
+    }
 }

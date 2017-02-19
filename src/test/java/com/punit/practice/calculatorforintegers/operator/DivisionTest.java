@@ -10,10 +10,10 @@ import org.junit.rules.ExpectedException;
  *
  * @author punit
  */
-public class DivsionTest extends TestCase {
+public class DivisionTest extends TestCase {
     
    
-    public DivsionTest(String testName) {
+    public DivisionTest(String testName) {
         super(testName);
     }
     
@@ -32,23 +32,30 @@ public class DivsionTest extends TestCase {
      */
     @Test
     public void testCalculate1() throws Exception {
-        System.out.println("calculate1.1");
+        System.out.println("calculate1");
         Division instance = new Division("6, 3");
         int expResult = 2;
         int result = instance.calculate();
         assertEquals(expResult, result);
-        
-        System.out.println("calculate1.2");
-        instance = new Division("-12, -3");
-        expResult = 4;
-        result = instance.calculate();
+    }
+    /**
+     * Test of calculate method, of class Division.
+     */
+    @Test
+    public void testCalculate2() throws Exception {
+        System.out.println("calculate2");
+        Division instance = new Division("-12, -3");
+        int expResult = 4;
+        int result = instance.calculate();
         assertEquals(expResult, result);
     }
+        
+    
     
     //@Rule public ExpectedException thrown = ExpectedException.none();
     //@Test(expected = IllegalArgumentException.class)
-    public void testCalculate2() throws CalculatorException{
-        System.out.println("calculate2");
+    public void testCalculate3() throws CalculatorException{
+        System.out.println("calculate3");
         Division instance = new Division("-2, 0");
         //thrown.expect(RuntimeException.class);
         //thrown.expectMessage(Division.DIVISOR_ZERO_ERROR);

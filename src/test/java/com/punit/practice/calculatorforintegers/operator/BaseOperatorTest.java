@@ -70,31 +70,53 @@ public class BaseOperatorTest extends TestCase {
      * Test of parseArguments method, of class BaseOperator.
      */
     @Test
-    public void testParseArguments() throws Exception {
-        System.out.println("parseArguments");
+    public void testParseArguments1() throws Exception {
+        System.out.println("parseArguments1");
         
         BaseOperator instance = new Addition("5,2");
         int[] result = instance.parseArguments();
         assertEquals(5, result[0]);
         assertEquals(2, result[1]);
+    }
+    /**
+     * Test of parseArguments method, of class BaseOperator.
+     */
+    @Test
+    public void testParseArguments2() throws Exception {
+        System.out.println("parseArguments2");
         
-        instance = new Addition("5,add(2,2)");
-        result = instance.parseArguments();
+        BaseOperator instance = new Addition("5,add(2,2)");
+        int[] result = instance.parseArguments();
         assertEquals(5, result[0]);
         assertEquals(4, result[1]);
+    }
+    
+    /**
+     * Test of parseArguments method, of class BaseOperator.
+     */
+    @Test
+    public void testParseArguments3() throws Exception {
+        System.out.println("parseArguments3");
         
-        instance = new Addition("mult(2, 3), sub(2,2)");
-        result = instance.parseArguments();
+        BaseOperator instance = new Addition("mult(2, 3), sub(2,2)");
+        int[] result = instance.parseArguments();
         assertEquals(6, result[0]);
         assertEquals(0, result[1]);
+    }
+    
+    /**
+     * Test of parseArguments method, of class BaseOperator.
+     */
+    @Test
+    public void testParseArguments4() throws Exception {
+        System.out.println("parseArguments4");
         
-        instance = new Addition("div(add(2, 8), 2), sub(12, mult(4, 0))");
-        result = instance.parseArguments();
+        BaseOperator instance = new Addition("div(add(2, 8), 2), sub(12, mult(4, 0))");
+        int[] result = instance.parseArguments();
         assertEquals(5, result[0]);
         assertEquals(12, result[1]);
-        
     }
-
+    
     public class BaseOperatorImpl extends BaseOperator {
 
         public BaseOperatorImpl() {
