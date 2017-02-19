@@ -7,5 +7,3 @@ deploy:
   api_key: ${api_key}
   file: "${JARPATH}"
   skip_cleanup: true
-  on:
-    tags: true
