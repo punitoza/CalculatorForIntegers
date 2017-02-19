@@ -10,7 +10,7 @@ import com.punit.practice.calculatorforintegers.exception.CalculatorException;
 public class Division extends BaseOperator{
     //NOT USED
     private static final int OPERAND_COUNT = 2;
-    
+    public static final String DIVISOR_ZERO_ERROR = "Encountered zero as the divisor";
     /**
      * Constructor
      * @param argList - The expression that needs to be evaluated 
@@ -35,8 +35,9 @@ public class Division extends BaseOperator{
         //return division of its arguments
         int operands[] = this.parseArguments(); // determine the operands
         if(operands[1] == 0) { // if divsior is 0 then throw an exception
-            throw new IllegalArgumentException("Encountered zero as the divisor");
+            throw new IllegalArgumentException(DIVISOR_ZERO_ERROR);
+        } else {
+            return operands[0] / operands[1]; // calculate sum and return
         }
-        return operands[0] / operands[1]; // calculate sum and return
     }
 }

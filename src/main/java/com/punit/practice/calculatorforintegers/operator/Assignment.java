@@ -49,12 +49,10 @@ public class Assignment extends BaseOperator{
         Calculator.log(Level.INFO, "Parsing arguments: " + argList);
         String varName = argList.substring(0, argList.indexOf(','));
         //Make sure that first operand is valid variable name and not conflicting with operator names.
-        Pattern intsOnly = Pattern.compile("\\d+");
-        if(intsOnly.matcher(varName).matches()) {
-            throw new IllegalArgumentException("Cannot have integer as the let operator variable.");
-        }
-        if(varName.contains("(") || varName.contains(")")) {
-            throw new IllegalArgumentException("Cannot have brackets in the let operator variable.");
+        Pattern intsOnly = Pattern.compile("\\d+|-\\d+");
+        Pattern variableNamePattern = Pattern.compile("[a-zA-Z]+");
+        if(!variableNamePattern.matcher(varName).matches()) {
+            throw new IllegalArgumentException("Cannot have characters other than a-z and A-Z for the let operator variable.");
         }
         for(OperatorEnum str: OperatorEnum.values()) {
             if(str.toString().equalsIgnoreCase(varName.trim())) {
@@ -69,7 +67,9 @@ public class Assignment extends BaseOperator{
         if(intsOnly.matcher(valueStr).matches()) {
             value = Integer.parseInt(valueStr);
             Calculator.log(Level.FINE, "Assignment value: " + value);
+            valueStr = argList;
         } else {
+            valueStr = argList.substring(startIndex, argList.length());
             int bracketIndex = valueStr.indexOf('(');
             int count, i;
             for(count=1, i=bracketIndex+1;count != 0 && i < valueStr.length();i++) {
@@ -83,14 +83,14 @@ public class Assignment extends BaseOperator{
                 throw new IllegalArgumentException("Incorrect format of the assignment value for the let operator.");
             } else {
                 // Compute the value that needs to be assigned to the variable
-                valueStr = valueStr.substring(0, i);
-                value = Calculator.compute(valueStr.trim());
+                String vStr = valueStr.substring(0, i);
+                value = Calculator.compute(vStr.trim());
                 Calculator.log(Level.FINE, "Assignment expression: " + valueStr + "--- value: " + value);
                 endIndex = i;
             }
         }
         //Determin the value that needs to be assigned to the variable specified in the first operand.
-        String expr = argList.substring(endIndex+1, argList.length()).trim();
+        String expr = valueStr.substring(endIndex+1, valueStr.length()).trim();
         if(intsOnly.matcher(expr).matches()) {
             throw new IllegalArgumentException("Cannot have integer as the let operator expression.");
         }

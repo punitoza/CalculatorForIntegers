@@ -97,7 +97,7 @@ public abstract class BaseOperator {
                 throw new IllegalArgumentException("Wrong Parsing method chosen.");
             }
             int operands[] = new int[this.getOperandCount()];
-            Pattern intsOnly = Pattern.compile("\\d+");
+            Pattern intsOnly = Pattern.compile("\\d+|-\\d+");
             Matcher matcher;
             String temp = argList.substring(0, argList.indexOf(','));
             String strArr[] = new String[2];
