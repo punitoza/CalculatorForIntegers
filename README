@@ -23,7 +23,9 @@ used which is INFO.
 As the output, it prints the final result of the expression.
 
 *********
-The continus integration is enabled on this repository via Travis-CI
+The continus integration is enabled on this repository via Travis-CI. 
+All commits (Push to master) result in a new Travis build. 
+However the new JAR gets auto deployed to github only when a new release/tag is created.
 *********
 
 For any questions, please feel free to leave a comment on the github.
