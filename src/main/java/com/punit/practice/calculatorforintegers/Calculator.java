@@ -2,7 +2,9 @@ package com.punit.practice.calculatorforintegers;
 
 import com.punit.practice.calculatorforintegers.exception.CalculatorException;
 import com.punit.practice.calculatorforintegers.operator.BaseOperator;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 /**
@@ -57,6 +59,10 @@ public class Calculator {
                     Calculator.LOGGER.setLevel(Level.OFF);
                 } else {
                     Calculator.LOGGER.setLevel(Level.INFO);
+                }
+                Logger log = LogManager.getLogManager().getLogger("");
+                for (Handler h : log.getHandlers()) {
+                    h.setLevel(Calculator.LOGGER.getLevel());
                 }
             }
             //Compute the result of the expression.
