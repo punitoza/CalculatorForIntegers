@@ -1,4 +1,6 @@
 language: java
+before_deploy:
+  - export jar_path=$(ls target/CalculatorForIntegers-1.0-SNAPSHORT.jar)
 deploy:
   provider: releases
   api_key: ${api_key}
