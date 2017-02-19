@@ -4,9 +4,16 @@ This is the README file for the application - CalculatorForIntegers. This applic
 while invoking the main method as command line arguments and then performs the calculation as specified by the expression. More
 details regarding the requirements specifications are in the RequirementSpecs.docx file.
 
-Please refer the file Calculator-UML-Diagram.png for understanding the class hierarchy used in this application.
+Please refer the file 
+*********
+Calculator-UML-Diagram.png
+********* for understanding the class hierarchy used in this application.
 
-The application has the test package that defines the test suite and about 30 test cases. Running the test suite will run all the 30 tests.
+*********
+The application has the test package that defines the test suite and about 30 test cases.
+*********
+
+Running the test suite will run all the 30 tests.
 
 The application accepts 2 parameters on the command line - first one is a required parameter and it is the expression that needs to be
 evaluated. Second parameter is the verbosity level of the log. This parameter is optional. If it is omitted then the default log level of INFO
@@ -14,6 +21,12 @@ will be set. If passed, it has to be among error, debug and off - case in-sensit
 used which is INFO.
 
 As the output, it prints the final result of the expression.
+
+*********
+The continus integration is enabled on this repository via Travis-CI. 
+All commits (Push to master) result in a new Travis build. 
+However the new JAR gets auto deployed to github only when a new release/tag is created.
+*********
 
 For any questions, please feel free to leave a comment on the github.
 
