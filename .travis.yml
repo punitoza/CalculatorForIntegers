@@ -1,9 +1,6 @@
 language: java
-before_deploy:
-  - "mvn -DskipTests package"
-  - export JARPATH=$(ls target/CalculatorForIntegers-1.0.-SNAPSHOT.jar)
 deploy:
   provider: releases
   api_key: ${api_key}
-  file: "${JARPATH}"
+  file: ${jar_path}
   skip_cleanup: true
