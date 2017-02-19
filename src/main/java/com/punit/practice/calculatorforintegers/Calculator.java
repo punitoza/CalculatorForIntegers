@@ -2,7 +2,6 @@ package com.punit.practice.calculatorforintegers;
 
 import com.punit.practice.calculatorforintegers.exception.CalculatorException;
 import com.punit.practice.calculatorforintegers.operator.BaseOperator;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,7 +44,7 @@ public class Calculator {
         try {
             //If the expression is not passed as command line argument, then raise the exception and return.
             if(args == null || args.length < 1 || args[0].length() < 1) {
-                //throw new IllegalArgumentException("No expression found to evaluate.");
+                throw new IllegalArgumentException("No expression found to evaluate.");
             }
             //If the optional logging level parameter is passed, then capture it and set the logging level.
             if(args.length > 1) {
@@ -61,9 +60,7 @@ public class Calculator {
                 }
             }
             //Compute the result of the expression.
-            //int result = compute(args[0]);
-            int result = compute("add(5, 2)");
-            //int result = compute("let(add(, 5, add(a, sub(13, let(b, 3, add(2, b)))))");
+            int result = compute(args[0]);
             System.out.println(result); //Print the output
         } catch (CalculatorException ex) {
             System.out.println("Error occurred while calculating.");
