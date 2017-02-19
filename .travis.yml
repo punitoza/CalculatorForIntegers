@@ -1,8 +1,8 @@
 language: java
 before_deploy:
-  - export jar_path=$(ls target/CalculatorForIntegers-1.0-SNAPSHORT.jar)
+  echo ${TRAVIS_BUILD_DIR}
 deploy:
   provider: releases
   api_key: ${api_key}
-  file: "${jar_path}"
+  file: target/CalculatorForIntegers-1.0-SNAPSHOT.jar
   skip_cleanup: true
