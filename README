@@ -15,6 +15,16 @@ The application has the test package that defines the test suite and about 30 te
 
 Running the test suite will run all the 30 tests.
 
+*********
+Run application by downloading the JAR file - CalculatorForIntegers-1.0-SNAPSHOT.jar from the latest release section
+of github repo and then running below command from the download directory of the JAR file. 
+
+java -jar CalculatorForIntegers-1.0-SNAPSHOT.jar "<expression such as add(1,2)" [error|debug|off]
+
+e.g:
+java -jar CalculatorForIntegers-1.0-SNAPSHOT.jar "add(1,2)" debug
+*********
+
 The application accepts 2 parameters on the command line - first one is a required parameter and it is the expression that needs to be
 evaluated. Second parameter is the verbosity level of the log. This parameter is optional. If it is omitted then the default log level of INFO
 will be set. If passed, it has to be among error, debug and off - case in-sensitive. If any other value is passed, then default value will be
